@@ -11,11 +11,11 @@
     <email>ruud@ruudboon.io</email>
     <active>yes</active>
   </lead>
-  <date>2020-01-11</date>
-  <time>18:00:00</time>
+  <date>2020-02-15</date>
+  <time>14:39:00</time>
   <version>
-    <release>4.0.2</release>
-    <api>4.0.2</api>
+    <release>4.0.4</release>
+    <api>4.0.4</api>
   </version>
   <stability>
     <release>stable</release>
@@ -25,22 +25,22 @@
   <notes>
     Full changelog can be found at: https://github.com/phalcon/cphalcon/blob/master/CHANGELOG-4.0.md
 
-    # [4.0.2]
+    # [4.0.4]
     ## Added
+    - Added a way to utilize GitHub actions to run database tests against each RDBMS and reworked the testing suite. [#14779](https://github.com/pha$
+    - Added the latest version of Codeception (v4) and utilized the phalcon4 module. [#14779](https://github.com/phalcon/cphalcon/issues/14779)
 
     ## Changed
-    - Changed the logic when logging times for `Phalcon\Logger` to use `DateTimeImmutable` so as to handle microseconds if necessary. [#2893](https://github.com/phalcon/cphalcon/issues/2893)
-    - Changed `Phalcon\Http\Cookie::send` and `Phalcon\Http\Cookie::delete` to allow for `samesite` to be passed in the `options` when using PHP > 7.3 [#14627](https://github.com/phalcon/cphalcon/issues/14627)
+    - Changed Column 'notNull' definition to make possible create nullable (NULL) columns [#14804](https://github.com/phalcon/cphalcon/pull/14804)
 
     ## Fixed
-    - Fixed `Phalcon\Mvc\Model\Criteria` Di isn't set when using `Criteria::fromInput()` [#14538](https://github.com/phalcon/cphalcon/issues/14639)
-    - Fixed `Phalcon\Db\Dialect\Mysql` removing unnecessary parentheses for `double` and `float` [#14645](https://github.com/phalcon/cphalcon/pull/14645) [@pfz](https://github.com/pfz)
-    - Fixed `Phalcon\Http\Cookie::delete` to parse the correct parameters - cannot use alternative syntax until PHP 7.3 [#14643](https://github.com/phalcon/cphalcon/issues/14643)
-    - Fixed `Phalcon\Mvc\Model::__isset` to take into account non visible properties by checking the getter if it exists [#13518](https://github.com/phalcon/cphalcon/issues/13518) [#13900](https://github.com/phalcon/cphalcon/issues/13900)
-    - Fixed `Phalcon\Mvc\Model::__set` to return a more informative message if we are tying to access a non visible property [#13518](https://github.com/phalcon/cphalcon/issues/13518) [#13900](https://github.com/phalcon/cphalcon/issues/13900)
-    - Fixed `Phalcon\Mvc\Model\Resultset\Simple::toArray` to correctly process virtual fields [#14669](https://github.com/phalcon/cphalcon/issues/14669)
-    - Fixed `Phalcon\Session\Manager::getUniqueKey` to prefix the key only if `uniqueId` is present [#14688](https://github.com/phalcon/cphalcon/issues/14688)
-    - Fixed `Phalcon\Db\Adapter\Pdo::describeColumns` to correctly detect ENUM columns [#14691](https://github.com/phalcon/cphalcon/issues/14691)
+    - Fixed `Phalcon\Db\Adapter\Pdo\Postgresql` to correctly identify `bool` fields instead of treating them as `tinyint` [#14722](https://github.co$
+    - Fixed `Phalcon\Cli\Console` to pass current container to the `Phalcon\Mvc\ModuleDefinitionInterface::registerAutoloaders()` [#14787](https://g$
+    - Fixed `Phalcon\Db\Dialect\Mysql::createTable()` to create default value with CURRENT_TIMESTAMP ON UPDATE/DELETE [#14797]
+    - Fixed `Phalcon\Storage\Adapter\*` to no longer accept the `serializer` option as it was clashing with the factory [#14828](https://github.com/$
+    - Fixed `Phalcon\Http\Request` to return the correct host on an `UnexpectedValueException` [#14763](https://github.com/phalcon/cphalcon/issues/1$
+    - Fixed `Phalcon\Assets\Collection` to initialize `position` to 0 [#14848](https://github.com/phalcon/cphalcon/pull/14848)
+
   </notes>
   <contents>
     <dir name="/">

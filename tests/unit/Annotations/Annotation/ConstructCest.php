@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Phalcon\Test\Unit\Annotations\Annotation;
 
+use Phalcon\Annotations\Annotation;
 use UnitTester;
 
 class ConstructCest
@@ -20,13 +21,20 @@ class ConstructCest
     /**
      * Tests Phalcon\Annotations\Annotation :: __construct()
      *
-     * @author Phalcon Team <team@phalcon.io>
-     * @since  2018-11-13
+     * @author Jeremy PASTOURET <https://github.com/jenovateurs>
+     * @since  2020-01-22
      */
     public function annotationsAnnotationConstruct(UnitTester $I)
     {
         $I->wantToTest('Annotations\Annotation - __construct()');
 
-        $I->skipTest('Need implementation');
+        $annotation = new Annotation([
+            'name' => 'NovAnnotation',
+        ]);
+
+        $I->assertInstanceOf(
+            Annotation::class,
+            $annotation
+        );
     }
 }
